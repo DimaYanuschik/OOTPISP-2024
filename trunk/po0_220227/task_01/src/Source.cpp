@@ -1,29 +1,18 @@
 #include "Header.h"
 #include <iostream>
 
-Car::Car()
+Car::Car() : brand(""), power(0), cost(0.0)
 {
-	brand = "";
-	power = 0;
-	cost = .0;
-
 	std::cout << "The object " << this << " was created using the default constructor!" << std::endl;
 }
 
-Car::Car(std::string brand, int power, float cost)
+Car::Car(std::string brand, int power, float cost) : brand(brand), power(power), cost(cost)
 {
-	this->brand = brand;
-	this->power = power;
-	this->cost = cost;
-
 	std::cout << "The object " << this << " was created using a constructor with parameters!" << std::endl;
 }
 
-Car::Car(Car const& car) {
-	this->brand = car.brand;
-	this->power = car.power;
-	this->cost = car.cost;
-
+Car::Car(Car const& car) : brand(car.brand), power(car.power), cost(car.cost)
+{
 	std::cout << "The object " << this << " was created using the copy constructor!" << std::endl;
 }
 
@@ -57,9 +46,11 @@ int Car::GetPower() {
 	return power;
 }
 
-float Car::GetCost() {
+float Car::GetCost(){
 	return cost;
 }
+
+
 
 
 
