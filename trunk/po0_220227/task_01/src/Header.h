@@ -9,7 +9,6 @@ public:
 	Car(const std::string& _brand, int _power, float _cost);
 	Car(Car const &_car);
 	~Car();
-	void destroy();
 
 	void SetBrand(const std::string& _brand);
 	void SetPower(int _power);

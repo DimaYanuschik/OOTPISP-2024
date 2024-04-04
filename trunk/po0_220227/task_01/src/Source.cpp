@@ -21,12 +21,7 @@ Car::~Car()
 	std::cout << "Destructor was called " << this << std::endl;
 }
 
-void Car::destroy()
-{
-	this->~Car();
-}
-
-void Car::SetBrand(std::string _brand) {
+void Car::SetBrand(const std::string& _brand) {
 	this->brand = _brand;
 }
 
