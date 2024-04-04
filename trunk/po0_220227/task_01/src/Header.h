@@ -6,14 +6,14 @@
 class Car {
 public:
 	Car();
-	Car(std::string brand, int power, float cost);
-	Car(Car const &car);
+	Car(std::string _brand, int _power, float _cost);
+	Car(Car const &_car);
 	~Car();
 	void destroy();
 
-	void SetBrand(std::string brand);
-	void SetPower(int power);
-	void SetCost(float cost);
+	void SetBrand(std::string _brand);
+	void SetPower(int _power);
+	void SetCost(float _cost);
 
 	std::string GetBrand() const;
 	int GetPower() const;
