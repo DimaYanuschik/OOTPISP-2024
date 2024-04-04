@@ -38,15 +38,15 @@ void Car::SetCost(float cost) {
 	this->cost = cost;
 }
 
-std::string Car::GetBrand() {
+std::string Car::GetBrand() const {
 	return brand;
 }
 
-int Car::GetPower() {
+int Car::GetPower() const {
 	return power;
 }
 
-float Car::GetCost(){
+float Car::GetCost() const {
 	return cost;
 }
 

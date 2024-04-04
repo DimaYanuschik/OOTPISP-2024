@@ -15,9 +15,9 @@ public:
 	void SetPower(int power);
 	void SetCost(float cost);
 
-	std::string GetBrand();
-	int GetPower();
-	float GetCost();
+	std::string GetBrand() const;
+	int GetPower() const;
+	float GetCost() const;
 private:
 	std::string brand;
 	int power;
