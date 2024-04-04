@@ -1,22 +1,21 @@
 #include <iostream>
 #include "Header.h"
 #include <vector>
-
-using namespace std;
+#include <array>
 
 int main()
 {
 	string brand;
-	cout << "Brand: ";
-	cin >> brand;
+	std::cout << "Brand: ";
+	std::cin >> brand;
 	
 	int power;
-	cout << "Power: ";
-	cin >> power;
+	std::cout << "Power: ";
+	std::cin >> power;
 	
 	float cost;
-	cout << "Cost: ";
-	cin >> cost;
+	std::cout << "Cost: ";
+	std::cin >> cost;
 	
 	Car car1(brand, power, cost);
 	void (Car:: * current_fun)();
@@ -37,12 +36,7 @@ int main()
 
 	(car3.*current_fun)();
 	
-	cout << cars[1]->GetBrand() << endl;
+	std::cout << cars[1]->GetBrand() << endl;
 
-	Car _cars[3] = { Car("Toyota", 387, 70000),
-						Car("Tesla", 670, 90000),
-						Car("BMW", 286, 80000)
-	};
-
-	system("pause");
+	std::array<Car, 3> { Car("Toyota", 387, 70000), Car("Tesla", 670, 90000), Car("BMW", 286, 80000) };
 }
