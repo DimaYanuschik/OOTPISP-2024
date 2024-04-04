@@ -18,9 +18,9 @@ int main()
 	std::cin >> cost;
 	
 	Car car1(brand, power, cost);
-	void (Car:: * current_fun)();
+	void (Car:: * current_fun)(float);
 
-	current_fun = &Car::Show;
+	current_fun = &Car::SetCost;
 
 	std::vector <Car*> cars;
 
@@ -34,7 +34,7 @@ int main()
 
 	cars.push_back(&car3);
 
-	(car3.*current_fun)();
+	(car3.*current_fun)(10.0);
 	
 	std::cout << cars[1]->GetBrand() << std::endl;
 	std::vector<Car> carsVector{ Car("Toyota", 387, 70000), Car("Tesla", 670, 90000), Car("BMW", 286, 80000)};

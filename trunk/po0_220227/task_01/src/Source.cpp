@@ -35,6 +35,6 @@ float Car::GetCost() const {
 	return cost;
 }
 
-void Car::Show() {
+void Car::Show() const {
 	std::cout << this->brand << " " << this->power << " " << this->cost << std::endl;
 }

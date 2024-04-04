@@ -11,7 +11,7 @@ public:
 	void SetBrand(const std::string& _brand);
 	void SetPower(int _power);
 	void SetCost(float _cost);
-	void Show();
+	void Show() const;
 
 	std::string GetBrand() const;
 	int GetPower() const;
