@@ -5,7 +5,7 @@
 
 int main()
 {
-	string brand;
+	std::string brand;
 	std::cout << "Brand: ";
 	std::cin >> brand;
 	
@@ -22,7 +22,7 @@ int main()
 
 	current_fun = &Car::destroy;
 
-	vector <Car*> cars;
+	std::vector <Car*> cars;
 
 	cars.push_back(&car1);
 
@@ -36,7 +36,9 @@ int main()
 
 	(car3.*current_fun)();
 	
-	std::cout << cars[1]->GetBrand() << endl;
+	std::cout << cars[1]->GetBrand() << std::endl;
 
-	std::array<Car, 3> { Car("Toyota", 387, 70000), Car("Tesla", 670, 90000), Car("BMW", 286, 80000) };
+	std::vector<Car> carsVector{ Car("Toyota", 387, 70000), Car("Tesla", 670, 90000), Car("BMW", 286, 80000) };
+
+	std::cout << "First car: " << carsVector[0].GetBrand() << std::endl;
 }

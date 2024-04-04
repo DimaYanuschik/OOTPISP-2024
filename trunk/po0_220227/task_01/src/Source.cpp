@@ -10,7 +10,7 @@ Car::Car()
 	std::cout << "The object " << this << " was created using the default constructor!" << std::endl;
 }
 
-Car::Car(string brand, int power, float cost)
+Car::Car(std::string brand, int power, float cost)
 {
 	this->brand = brand;
 	this->power = power;
@@ -29,7 +29,7 @@ Car::Car(Car const& car) {
 
 Car::~Car()
 {
-	cout << "Destructor was called " << this << endl;
+	std::cout << "Destructor was called " << this << std::endl;
 }
 
 void Car::destroy()
@@ -37,7 +37,7 @@ void Car::destroy()
 	this->~Car();
 }
 
-void Car::SetBrand(string brand) {
+void Car::SetBrand(std::string brand) {
 	this->brand = brand;
 }
 
@@ -49,7 +49,7 @@ void Car::SetCost(float cost) {
 	this->cost = cost;
 }
 
-string Car::GetBrand() {
+std::string Car::GetBrand() {
 	return brand;
 }
 
