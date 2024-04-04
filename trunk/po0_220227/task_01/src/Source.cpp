@@ -6,7 +6,7 @@ Car::Car() : brand(""), power(0), cost(0.0)
 	std::cout << "The object " << this << " was created using the default constructor!" << std::endl;
 }
 
-Car::Car(std::string _brand, int _power, float _cost) : brand(_brand), power(_power), cost(_cost)
+Car::Car(const std::string& _brand, int _power, float _cost) : brand(_brand), power(_power), cost(_cost)
 {
 	std::cout << "The object " << this << " was created using a constructor with parameters!" << std::endl;
 }
