@@ -20,7 +20,7 @@ int main()
 	Car car1(brand, power, cost);
 	void (Car:: * current_fun)();
 
-	current_fun = &Car::destroy;
+	current_fun = &Car::Show;
 
 	std::vector <Car*> cars;
 

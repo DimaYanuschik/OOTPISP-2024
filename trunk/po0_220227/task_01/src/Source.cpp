@@ -11,16 +11,6 @@ Car::Car(const std::string& _brand, int _power, float _cost) : brand(_brand), po
 	std::cout << "The object " << this << " was created using a constructor with parameters!" << std::endl;
 }
 
-Car::Car(Car const& _car) : brand(_car.brand), power(_car.power), cost(_car.cost)
-{
-	std::cout << "The object " << this << " was created using the copy constructor!" << std::endl;
-}
-
-Car::~Car()
-{
-	std::cout << "Destructor was called " << this << std::endl;
-}
-
 void Car::SetBrand(const std::string& _brand) {
 	this->brand = _brand;
 }
@@ -45,7 +35,6 @@ float Car::GetCost() const {
 	return cost;
 }
 
-
-
-
-
+void Car::Show() {
+	std::cout << this->brand << " " << this->power << " " << this->cost << std::endl;
+}
