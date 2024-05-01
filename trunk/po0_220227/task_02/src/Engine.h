@@ -8,7 +8,7 @@ class Engine
 public:
 	Engine() = default;
 	Engine(const std::string& _modelName, const float _power, const float _weight);
-	~Engine() = default;
+	virtual ~Engine() = default;
 
 	void Add();
 	void SetNext(Engine* _nextEngine);
