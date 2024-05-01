@@ -25,7 +25,7 @@ public:
 	void SetWeight(const float _weight);
 	float GetWeight() const;
 private:
-	std::string_view modelName = "";
+	std::string modelName = "";
 	float power = 0;
 	float weight = 0;
 	Engine* next = nullptr;

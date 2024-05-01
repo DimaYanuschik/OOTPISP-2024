@@ -49,7 +49,7 @@ void Engine::SetModelName(std::string_view& _modelName)
 	modelName = _modelName;
 }
 
-std::string_view Engine::GetModelName() const 
+std::string Engine::GetModelName() const 
 {
 	return modelName;
 }
