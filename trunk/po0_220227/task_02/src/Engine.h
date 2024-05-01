@@ -16,7 +16,7 @@ public:
 	virtual void Print() const;
 	static void ShowEngines();
 
-	void SetModelName(std::string& _modelName);
+	void SetModelName(const std::string& _modelName);
 	std::string GetModelName() const;
 
 	void SetPower(const float _power);
