@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
 
-set(SOURCE_FILES  main.cpp
+set(SOURCE_FILES  Main.cpp
 Engine.cpp ICEngine.cpp DieselEngine.cpp TurbojetEngine.cpp)
 
 set(HEADER_FILES Engine.h ICEngine.h DieselEngine.h TurbojetEngine.h)
