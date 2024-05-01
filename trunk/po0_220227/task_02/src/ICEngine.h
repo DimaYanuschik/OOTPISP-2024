@@ -10,6 +10,7 @@ class ICEngine :
 public:
     ICEngine() = default;
     ICEngine(const float _efficiency, const int _cylinders, const std::string& _modelName, const float _power, const float _weight);
+    ~ICEngine() override = default;
     void Print() const override;
 
     void SetEfficiency(const float _efficiency);

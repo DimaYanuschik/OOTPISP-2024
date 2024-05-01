@@ -10,7 +10,7 @@ class TurbojetEngine :
 public:
     TurbojetEngine() = default;
     TurbojetEngine(const float _thrust, const std::string& _modelName, const float _power, const float _weight);
-    ~TurbojetEngine() = default;
+    ~TurbojetEngine() override = default;
     void Print() const override;
 
     void SetThrust(const float _thrust);
