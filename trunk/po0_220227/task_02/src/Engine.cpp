@@ -44,7 +44,7 @@ void Engine::ShowEngines() {
 	}
 }
 
-void Engine::SetModelName(const std::string& _modelName)
+void Engine::SetModelName(std::string_view& _modelName)
 {
 	modelName = _modelName;
 }
