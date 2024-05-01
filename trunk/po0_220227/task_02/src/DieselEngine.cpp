@@ -2,7 +2,7 @@
 #include <iostream>
 
 DieselEngine::DieselEngine(const float _torque, const float _efficiency, const int _cylinders, const std::string& _modelName, const float _power, const float _weight)
-	: ICEngine(_efficiency,_cylinders,_modelName, _power, _weight)
+	: ICEngine(_efficiency,_cylinders,_modelName, _power, _weight), torque(_torque)
 {
 	this->Add();
 }
