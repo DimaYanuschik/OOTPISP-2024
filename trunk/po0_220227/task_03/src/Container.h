@@ -13,7 +13,7 @@ public:
 	class Item
 	{
 	public:
-		Item(Number* _number) : number(_number), next(nullptr)
+		explicit Item(Number* _number) : next(nullptr), number(_number)
 		{}
 		Item* next;
 		Number* number;
