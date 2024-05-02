@@ -41,8 +41,8 @@ int main()
 	numbers.Add(&real1);
 	numbers.Add(&real2);
 
-	Complex complex1(5.6, 10.8);
-	Complex complex2(17.9, 11.56);
+	Complex complex1((float)5.6, (float)10.8);
+	Complex complex2((float)17.9, (float)11.56);
 
 	if (complex1 == complex2)
 	{

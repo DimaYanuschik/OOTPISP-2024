@@ -13,10 +13,10 @@ public:
 	class Item
 	{
 	public:
-		explicit Item(Number* _number) : next(nullptr), number(_number)
+		explicit Item(Number* _number) : number(_number)
 		{}
-		Item* next;
 		Number* number;
+		Item* next = nullptr;
 	};
 
 	void Add(Number* _number);
