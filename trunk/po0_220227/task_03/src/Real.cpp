@@ -1,7 +1,7 @@
 #include "Real.h"
 #include <iostream>
 
-Real::Real(const int _value) : value(_value)
+Real::Real(const float _value) : value(_value)
 {
 }
 
