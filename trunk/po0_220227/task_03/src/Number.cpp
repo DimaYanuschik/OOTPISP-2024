@@ -20,19 +20,9 @@ void Number::Print() const
 	std::cout << "Designating: " << designating << std::endl;
 }
 
-void Number::operator = (const Number other)
-{
-	this->designating = other.designating;
-}
-
-bool Number::operator == (const Number other) const
+bool Number::operator == (const Number& other) const
 {
 	if (this->designating == other.designating)
 		return true;
 	return false;
-}
-
-bool Number::operator != (const Number other) const
-{
-	return !(*this == other);
 }

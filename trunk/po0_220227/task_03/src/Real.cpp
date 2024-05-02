@@ -20,19 +20,9 @@ void Real::Print() const
 	std::cout << "Value: " << value << std::endl;
 }
 
-void Real::operator = (const Real other)
-{
-	this->value = other.value;
-}
-
-bool Real::operator == (const Real other) const
+bool Real::operator == (const Real& other) const
 {
 	if (this->value == other.value)
 		return true;
 	return false;
-}
-
-bool Real::operator != (const Real other) const
-{
-	return !(*this == other);
 }

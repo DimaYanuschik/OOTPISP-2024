@@ -16,10 +16,7 @@ public:
 
     void Print() const override;
 
-    void operator = (const Integer other);
-    bool operator == (const Integer other) const;
-    bool operator != (const Integer other) const;
-
+    bool operator == (const Integer& other) const;
 private:
     int value = 0;
 };

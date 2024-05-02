@@ -20,19 +20,9 @@ void Integer::Print() const
 	std::cout << "Value: " << value << std::endl;
 }
 
-void Integer::operator = (const Integer other)
-{
-	this->value = other.value;
-}
-
-bool Integer::operator == (const Integer other) const
+bool Integer::operator == (const Integer& other) const
 {
 	if (this->value == other.value)
 		return true;
 	return false;
-}
-
-bool Integer::operator != (const Integer other) const
-{
-	return !(*this == other);
 }

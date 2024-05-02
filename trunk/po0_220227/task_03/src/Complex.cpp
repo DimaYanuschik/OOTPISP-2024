@@ -30,21 +30,9 @@ void Complex::Print() const
 	std::cout << "(" << realPart << ")+(" << imaginaryPart << ")i" << std::endl;
 }
 
-void Complex::operator = (const Complex other)
-{
-	this->realPart = other.realPart;
-}
-
-bool Complex::operator == (const Complex other) const
+bool Complex::operator == (const Complex& other) const
 {
 	if (this->realPart == other.realPart && this->imaginaryPart == other.imaginaryPart)
 		return true;
 	return false;
 }
-
-bool Complex::operator != (const Complex other) const
-{
-	return !(*this == other);
-}
-
-

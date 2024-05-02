@@ -15,9 +15,7 @@ public:
 
 	virtual void Print() const;
 
-	void operator = (const Number _other);
-	bool operator == (const Number _other) const;
-	bool operator != (const Number _other) const;
+	bool operator == (const Number& _other) const;
 private:
 	char designating = ' ';
 };
