@@ -4,6 +4,7 @@
 #include "Real.h"
 #include "Complex.h"
 #include <iostream>
+#include <memory>
 
 void Container::Add(Number* _number)
 {
@@ -55,7 +56,6 @@ Number* Container::operator[](const int index)
 	catch (const char* error_message)
 	{
 		std::cout << error_message << std::endl;
-		Number number;
-		return &number;
+		return nullptr;
 	}
 }
