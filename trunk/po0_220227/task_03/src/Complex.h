@@ -10,7 +10,7 @@ class Complex :
 public:
     Complex() = default;
     Complex(const float _realPart, const float _imaginaryPart);
-    ~Complex() = default;
+    ~Complex() override = default;
 
     void SetRealPart(const float _realPart);
     float GetRealPart() const;

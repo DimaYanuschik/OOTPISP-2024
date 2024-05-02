@@ -45,7 +45,7 @@ Number* Container::operator[](const int index)
 {
 	try {
 		if (index < 0 || index >= size)
-			throw  "your index is out of range\nReturn empty element";
+			throw  std::string{ "your index is out of range\nReturn empty element" };
 		Item* ptr = begin;
 		for (int i = 0; i < index; i++)
 		{
@@ -53,7 +53,7 @@ Number* Container::operator[](const int index)
 		}
 		return ptr->number;
 	}
-	catch (const char* error_message)
+	catch (const std::string& error_message)
 	{
 		std::cout << error_message << std::endl;
 		return nullptr;
