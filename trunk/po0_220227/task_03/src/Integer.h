@@ -9,7 +9,7 @@ class Integer :
 public:
     Integer() = default;
     explicit Integer(const int _value);
-    ~Integer() = default;
+    ~Integer() override = default;
 
     void SetValue(const int _value);
     int GetValue() const;
