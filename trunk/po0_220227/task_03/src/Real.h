@@ -8,7 +8,7 @@ class Real :
 {
 public:
     Real() = default;
-    Real(const int _value);
+    explicit Real(const int _value);
     ~Real() = default;
 
     void SetValue(const float _value);

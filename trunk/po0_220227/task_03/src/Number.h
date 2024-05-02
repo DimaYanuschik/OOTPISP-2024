@@ -7,7 +7,7 @@ class Number
 {
 public:
 	Number() = default;
-	Number(const char _designating);
+	explicit Number(const char _designating);
 	virtual ~Number() = default;
 
 	void SetDesignating(const char _designating);

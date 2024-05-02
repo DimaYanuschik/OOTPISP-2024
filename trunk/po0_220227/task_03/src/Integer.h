@@ -8,7 +8,7 @@ class Integer :
 {
 public:
     Integer() = default;
-    Integer(const int _value);
+    explicit Integer(const int _value);
     ~Integer() = default;
 
     void SetValue(const int _value);
