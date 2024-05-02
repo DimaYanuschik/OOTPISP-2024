@@ -10,7 +10,7 @@ void Real::SetValue(const float _value)
 	value = _value;
 }
 
-int Real::GetValue() const
+float Real::GetValue() const
 {
 	return value;
 }

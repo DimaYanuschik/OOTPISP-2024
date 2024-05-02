@@ -12,7 +12,7 @@ public:
     ~Real() override = default;
 
     void SetValue(const float _value);
-    int GetValue() const;
+    float GetValue() const;
 
     void Print() const override;
 
