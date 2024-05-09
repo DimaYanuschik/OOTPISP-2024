@@ -60,6 +60,4 @@ int main()
 	numbers.PrintAll();
 
 	numbers[7]->Print();
-
-	system("pause");
 }
