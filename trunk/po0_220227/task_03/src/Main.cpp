@@ -27,7 +27,6 @@ int main()
 
 	Real real1(18);
 	Real real2;
-	real2 = real1;
 
 	if (real1 == real2)
 	{
