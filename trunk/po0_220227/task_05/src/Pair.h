@@ -28,6 +28,10 @@ public:
         return in;
     }
 
+    friend Pair operator+(const Pair& lhs, const Pair& rhs) {
+        return Pair(lhs.firstNumber + rhs.firstNumber, lhs.secondNumber + rhs.secondNumber);
+    }
+
     inline void SetFirstNumber(const int fNum) { firstNumber = fNum; };
     inline void SetSecondNumber(const double sNum) { secondNumber = sNum; };
 
@@ -38,9 +42,5 @@ private:
     int firstNumber = 0;
     double secondNumber = 0.0;
 
-    friend Pair operator+(const Pair& lhs, const Pair& rhs);
+    
 };
-
-Pair operator+(const Pair& lhs, const Pair& rhs) {
-    return Pair(lhs.firstNumber + rhs.firstNumber, lhs.secondNumber + rhs.secondNumber);
-}

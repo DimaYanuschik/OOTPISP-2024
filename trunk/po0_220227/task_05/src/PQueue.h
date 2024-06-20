@@ -4,12 +4,8 @@
 #include <functional>
 
 class QList {
-private:
-    std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> pq;
-    std::function<bool(int, int)> comparator = std::less<int>();
-
 public:
-    QList(std::function<bool(int, int)> comp = std::less<int>())
+    explicit QList(const std::function<bool(int, int)>& comp = std::less<int>())
         : comparator(comp), pq(comp) {}
 
     void fillElements(const std::vector<int>& elements) {
@@ -72,4 +68,7 @@ public:
         }
         pq = std::move(temp);
     }
+private:
+    std::function<bool(int, int)> comparator = std::less<int>();
+    std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> pq;
 };
