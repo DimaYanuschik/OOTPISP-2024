@@ -11,7 +11,7 @@ public:
     ~Pair() = default;
 
     Pair& operator=(const Pair& a) = default;
-    bool operator==(const Pair& a) const = default;
+ //  bool operator==(const Pair& a) const = default;
 
     friend Pair operator+(const Pair& first, const Pair& second)
     {
