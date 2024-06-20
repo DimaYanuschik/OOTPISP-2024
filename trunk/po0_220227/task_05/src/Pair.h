@@ -11,11 +11,7 @@ public:
     ~Pair() = default;
 
     Pair& operator=(const Pair& a) = default;
-    bool operator==(const Pair& a) const;
-
-    Pair operator+(const Pair& other) const {
-        return Pair(this->firstNumber + other.firstNumber, this->secondNumber + other.secondNumber);
-    }
+    bool operator==(const Pair& a) const = default;
 
     friend std::ostream& operator<<(std::ostream& out, const Pair& a)
     {
@@ -41,4 +37,10 @@ public:
 private:
     int firstNumber = 0;
     double secondNumber = 0.0;
+
+    friend Pair operator+(const Pair& lhs, const Pair& rhs);
 };
+
+Pair operator+(const Pair& lhs, const Pair& rhs) {
+    return Pair(lhs.firstNumber + rhs.firstNumber, lhs.secondNumber + rhs.secondNumber);
+}
