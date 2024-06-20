@@ -5,7 +5,5 @@ Pair::Pair(const int fNum, const double sNum)
 {
 }
 
-//bool Pair::operator==(const Pair& a) const
-//{
-//    return (firstNumber == a.firstNumber && secondNumber == a.secondNumber);
-//}
+bool Pair::operator==(const Pair& a) const = default;
+
