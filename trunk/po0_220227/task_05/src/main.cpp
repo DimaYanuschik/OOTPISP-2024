@@ -133,7 +133,7 @@ int main() {
     std::cout << "\nQueue after removing element:" << std::endl;
     pairQueue.printElements();
 
-    pairQueue.removeElementsInRange(2, 4);
+    pairQueue.removePairsInRange(2, 4);
     std::cout << "\nQueue after removing elements in range:" << std::endl;
     pairQueue.printElements();
 
