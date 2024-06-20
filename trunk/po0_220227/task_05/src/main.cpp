@@ -96,7 +96,7 @@ int main() {
 
     // Задание 3-5
 
-    List<std::pair<int, int>> list([](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+    QList<std::pair<int, int>> list([](const std::pair<int, int>& a, const std::pair<int, int>& b) {
         return a.first > b.first;
         });
 

@@ -2,7 +2,7 @@
 #include <functional>
 
 template <typename T>
-class List {
+class QList {
 private:
     std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> pq;
     std::function<bool(const T&, const T&)> comparator;
