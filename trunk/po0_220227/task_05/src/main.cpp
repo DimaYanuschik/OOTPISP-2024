@@ -54,14 +54,14 @@ int main() {
     // Задание 1
     std::vector<int> my_list = create_list<int>();
 
-    std::vector<int> initial_elements = { 1, 2, 3, 4, 5 };
-    fill_list(my_list, initial_elements);
+    std::vector<int> initial_elements_1 = { 1, 2, 3, 4, 5 };
+    fill_list(my_list, initial_elements_1);
 
-    std::vector<int> additional_elements = { 6, 7, 8 };
+    std::vector<int> additional_elements_1 = { 6, 7, 8 };
     add_elements(my_list, additional_elements);
 
-    std::vector<int> elements_to_remove = { 2, 4 };
-    remove_elements(my_list, elements_to_remove);
+    std::vector<int> elements_to_remove_1 = { 2, 4 };
+    remove_elements(my_list, elements_to_remove_1);
 
     int sum = sum_elements(my_list);
 
@@ -70,16 +70,16 @@ int main() {
     // Задание 2
     std::vector<Pair> my_pair_list = create_list<Pair>();
 
-    std::vector<Pair> initial_elements = { Pair(1, 2.5), Pair(3, 4.5), Pair(5, 6.5) };
-    fill_list(my_list, initial_elements);
+    std::vector<Pair> initial_elements_2 = { Pair(1, 2.5), Pair(3, 4.5), Pair(5, 6.5) };
+    fill_list(my_list, initial_elements_2);
 
-    std::vector<Pair> additional_elements = { Pair(7, 8.5), Pair(9, 10.5) };
-    add_elements(my_list, additional_elements);
+    std::vector<Pair> additional_elements_2 = { Pair(7, 8.5), Pair(9, 10.5) };
+    add_elements(my_list, additional_elements_2);
 
-    std::vector<Pair> elements_to_remove = { Pair(1, 2.5), Pair(5, 6.5) };
-    remove_elements(my_list, elements_to_remove);
+    std::vector<Pair> elements_to_remove_2 = { Pair(1, 2.5), Pair(5, 6.5) };
+    remove_elements(my_list, elements_to_remove_2);
 
-    Pair sum = sum_elements(my_pair_list);
+    Pair pairSum = sum_elements(my_pair_list);
 
     std::list<Pair> pairList;
     pairList.emplace_back(1, 10.0);
