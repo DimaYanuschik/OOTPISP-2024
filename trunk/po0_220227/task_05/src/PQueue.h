@@ -25,9 +25,9 @@ public:
     }
 
     void removeElementsInRange(int minFirstNumber, int maxFirstNumber) {
-        std::set<T> elementsToRemove;
+        std::set<Pair> elementsToRemove;
         while (!queue.empty()) {
-            const T& top = queue.top();
+            const Pair& top = queue.top();
             if (top.GetFirstNumber() >= minFirstNumber && top.GetFirstNumber() <= maxFirstNumber) {
                 elementsToRemove.insert(top);
             }
