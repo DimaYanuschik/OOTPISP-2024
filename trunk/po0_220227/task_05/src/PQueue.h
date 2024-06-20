@@ -1,73 +1,74 @@
-#include <iostream>
 #include <queue>
-#include <set>
+#include <functional>
 
 template <typename T>
-class PriorityQueue {
+class List {
 private:
-    std::priority_queue<T> queue;
+    std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> pq;
+    std::function<bool(const T&, const T&)> comparator;
 
 public:
+    List(std::function<bool(const T&, const T&)> comp = std::less<T>())
+        : comparator(comp), pq(comp) {}
+
     void fillElements(const std::vector<T>& elements) {
         for (const auto& element : elements) {
-            queue.push(element);
+            pq.push(element);
         }
     }
 
     void addElement(const T& element) {
-        queue.push(element);
+        pq.push(element);
     }
 
     void removeElement() {
-        if (!queue.empty()) {
-            queue.pop();
+        if (!pq.empty()) {
+            pq.pop();
         }
     }
 
     void removePairsInRange(int minFirstNumber, int maxFirstNumber) {
-        std::priority_queue<Pair> tempQueue;
-
-        while (!queue.empty()) {
-            Pair top = queue.top();
-            queue.pop();
-
-            if (top.GetFirstNumber() < minFirstNumber || top.GetFirstNumber() > maxFirstNumber) {
-                tempQueue.push(top);
+        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(comparator);
+        while (!pq.empty()) {
+            T element = pq.top();
+            pq.pop();
+            if (element.GetFirstNumber() < minFirstNumber || element.GetFirstNumber() > maxFirstNumber) {
+                temp.push(element);
             }
         }
-
-        queue = std::move(tempQueue);
+        pq = std::move(temp);
     }
 
     void printElements() const {
-        std::priority_queue<T> temp = queue;
+        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(pq);
         while (!temp.empty()) {
-            std::cout << temp.top();
+            std::cout << temp.top() << " ";
             temp.pop();
         }
+        std::cout << std::endl;
     }
 
     T getAverage() const {
         T sum = 0;
         size_t count = 0;
-        std::priority_queue<T> temp = queue;
+        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(pq);
         while (!temp.empty()) {
             sum += temp.top();
-            temp.pop();
             count++;
+            temp.pop();
         }
         return sum / static_cast<T>(count);
     }
 
     void subtractAverage() {
         T average = getAverage();
-        std::priority_queue<T> temp;
-        while (!queue.empty()) {
-            T element = queue.top();
-            queue.pop();
+        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(comparator);
+        while (!pq.empty()) {
+            T element = pq.top();
+            pq.pop();
             element -= average;
             temp.push(element);
         }
-        queue = std::move(temp);
+        pq = std::move(temp);
     }
 };

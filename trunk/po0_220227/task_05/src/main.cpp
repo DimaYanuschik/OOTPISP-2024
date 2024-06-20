@@ -94,72 +94,39 @@ int main() {
 
     std::cout << "Сумма элементов списка: " << sum << std::endl;
 
-    // Задание 3
-    PriorityQueue<Pair> pQueue;
-    std::vector<Pair> pairs = {
-        Pair(10, 3.5),
-        Pair(15, 2.7),
-        Pair(8, 4.2),
-        Pair(20, 1.9),
-        Pair(12, 3.1),
-        Pair(18, 2.4),
-        Pair(14, 2.9),
-        Pair(16, 3.0)
-    };
+    // Задание 3-5
 
-    pQueue.fillElements(pairs);
-    std::cout << "Initial queue: ";
-    pQueue.printElements();
-    std::cout << std::endl;
+    List<std::pair<int, int>> list([](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+        return a.first > b.first;
+        });
 
-    pQueue.removePairsInRange(11, 17);
-    std::cout << "Queue after removing pairs in range [11, 17]: ";
-    pQueue.printElements();
-    std::cout << std::endl;
+    std::vector<std::pair<int, int>> elements = { {10, 1}, {5, 2}, {8, 3}, {3, 4}, {7, 5} };
+    list.fillElements(elements);
 
-    // Задание 4
+    std::cout << "Initial list: ";
+    list.printElements();
 
-    PriorityQueue<Pair> pairQueue;
-    pairQueue.fillElements({ {1, 2.5}, {3, 4.7}, {5, 6.1}, {2, 3.9}, {4, 5.3} });
+    list.addElement({ 6, 6 });
 
-    std::cout << "Initial queue:" << std::endl;
-    pairQueue.printElements();
+    std::cout << "List after adding element: ";
+    list.printElements();
 
-    pairQueue.addElement({ 6, 7.2 });
-    std::cout << "\nQueue after adding element:" << std::endl;
-    pairQueue.printElements();
+    list.removeElement();
 
-    pairQueue.removeElement();
-    std::cout << "\nQueue after removing element:" << std::endl;
-    pairQueue.printElements();
+    std::cout << "List after removing element: ";
+    list.printElements();
 
-    pairQueue.removePairsInRange(2, 4);
-    std::cout << "\nQueue after removing elements in range:" << std::endl;
-    pairQueue.printElements();
+    list.removePairsInRange(4, 8);
 
-    // Задание 5
+    std::cout << "List after removing pairs in range: ";
+    list.printElements();
 
-    PriorityQueue<int> intQueue;
-    intQueue.fillElements({ 10, 20, 30, 40, 50 });
+    std::cout << "Average of first numbers: " << list.getAverage().first << std::endl;
 
-    std::cout << "Initial queue: ";
-    intQueue.printElements();
+    list.subtractAverage();
 
-    intQueue.addElement(60);
-    std::cout << "Queue after adding element: ";
-    intQueue.printElements();
-
-    intQueue.removeElement();
-    std::cout << "Queue after removing element: ";
-    intQueue.printElements();
-
-    intQueue.removePairsInRange(20, 40);
-    std::cout << "Queue after removing elements in range: ";
-    intQueue.printElements();
-
-    intQueue.subtractAverage();
-    std::cout << "Queue after subtracting average: ";
-    intQueue.printElements();
+    std::cout << "List after subtracting average: ";
+    list.printElements();
 
     return 0;
 }
