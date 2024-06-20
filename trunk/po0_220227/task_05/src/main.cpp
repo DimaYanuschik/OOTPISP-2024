@@ -74,10 +74,10 @@ int main() {
     fill_list(my_list, initial_elements_2);
 
     std::vector<Pair> additional_elements_2 = { Pair(7, 8.5), Pair(9, 10.5) };
-    add_elements(my_list, additional_elements_2);
+    add_elements(my_pair_list, additional_elements_2);
 
     std::vector<Pair> elements_to_remove_2 = { Pair(1, 2.5), Pair(5, 6.5) };
-    remove_elements(my_list, elements_to_remove_2);
+    remove_elements(my_pair_list, elements_to_remove_2);
 
     Pair pairSum = sum_elements(my_pair_list);
 
