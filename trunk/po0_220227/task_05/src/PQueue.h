@@ -8,7 +8,7 @@ private:
     std::priority_queue<T> queue;
 
 public:
-    void fillElements(const std::initializer_list<T>& elements) {
+    void fillElements(const std::vector<T>& elements) {
         for (const auto& element : elements) {
             queue.push(element);
         }

@@ -112,7 +112,7 @@ int main() {
     pQueue.printElements();
     std::cout << std::endl;
 
-    pQueue.removePairsInRange(pQueue.queue, 11, 17);
+    pQueue.removePairsInRange(11, 17);
     std::cout << "Queue after removing pairs in range [11, 17]: ";
     pQueue.printElements();
     std::cout << std::endl;
