@@ -1,46 +1,48 @@
-
-#pragma once
+#prag
 
 #include <iostream>
+#include <list>
+#include <cmath>
 
-class Pair
-{
-public:
-    Pair() = default;
-    Pair(const int firstNumber, const double secondNumber);
-    Pair(const Pair& other) = default;
-    ~Pair() = default;
-
-    Pair& operator=(const Pair& a) = default;
-    bool operator==(const Pair& a) const = default;
-
-    friend std::ostream& operator<<(std::ostream& out, const Pair& a)
-    {
-        out << a.GetFirstNumber() << ":" << a.GetSecondNumber() << std::endl;
-        return out;
-    }
-
-    friend std::istream& operator>>(std::istream& in, Pair& a)
-    {
-        std::cout << "Enter first number(int)" << std::endl;
-        in >> a.firstNumber;
-        std::cout << "Enter second number(double)" << std::endl;
-        in >> a.secondNumber;
-        return in;
-    }
-
-    inline void SetFirstNumber(const int fNum) { firstNumber = fNum; };
-    inline void SetSecondNumber(const double sNum) { secondNumber = sNum; };
-
-    inline int GetFirstNumber() const { return firstNumber; };
-    inline double GetSecondNumber() const { return secondNumber; };
-
+template <typename T>
+class List {
 private:
-    int firstNumber = 0;
-    double secondNumber = 0.0;
+    std::list<T> container;
 
-    friend Pair operator+(const Pair& lhs, const Pair& rhs)
-    {
-        return Pair(lhs.firstNumber + rhs.firstNumber, lhs.secondNumber + rhs.secondNumber);
+public:
+    void fillElements(const std::initializer_list<T>& elements) {
+        container.assign(elements);
+    }
+
+    void addElementAtPosition(const T& element, size_t position) {
+        auto it = container.begin();
+        std::advance(it, position);
+        container.insert(it, element);
+    }
+
+    void removeElementAtPosition(size_t position) {
+        auto it = container.begin();
+        std::advance(it, position);
+        container.erase(it);
+    }
+
+    void findAndAddAverage(size_t position) {
+        if (container.empty()) {
+            return;
+        }
+
+        T sum = 0;
+        for (const auto& element : container) {
+            sum += element;
+        }
+        T average = sum / static_cast<T>(container.size());
+        addElementAtPosition(average, position);
+    }
+
+    void printElements() const {
+        for (const auto& element : container) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl;
     }
 };
