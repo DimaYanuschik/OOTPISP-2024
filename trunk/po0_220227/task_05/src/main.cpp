@@ -95,22 +95,7 @@ int main() {
     std::cout << "Сумма элементов списка: " << sum << std::endl;
 
     // Задание 3
-    /*List<int> intList;
-    intList.fillElements({ 1, 2, 3, 4, 5 });
-    std::cout << "Initial list: ";
-    intList.printElements();
-
-    intList.addElementAtPosition(10, 2);
-    std::cout << "List after adding element: ";
-    intList.printElements();
-
-    intList.removeElementAtPosition(1);
-    std::cout << "List after removing element: ";
-    intList.printElements();
-
-    intList.findAndAddAverage(3);
-    std::cout << "List after adding average: ";
-    intList.printElements();*/
+    PriorityQueue<Pair> pQueue;
     std::vector<Pair> pairs = {
         Pair(10, 3.5),
         Pair(15, 2.7),
@@ -122,34 +107,14 @@ int main() {
         Pair(16, 3.0)
     };
 
-    std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>> pairQueue;
-    addPairs(pairQueue, pairs);
-
-    std::cout << "Initial pair queue: ";
-    while (!pairQueue.empty()) {
-        std::cout << pairQueue.top();
-        pairQueue.pop();
-    }
+    pQueue.fillElements(pairs);
+    std::cout << "Initial queue: ";
+    pQueue.printElements();
     std::cout << std::endl;
 
-    std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>> pairQueue2 = {
-        Pair(10, 3.5),
-        Pair(15, 2.7),
-        Pair(8, 4.2),
-        Pair(20, 1.9),
-        Pair(12, 3.1),
-        Pair(18, 2.4),
-        Pair(14, 2.9),
-        Pair(16, 3.0)
-    };
-
-    removePairsInRange(pairQueue2, 11, 17);
-
-    std::cout << "Pair queue after removing elements in range [11, 17]: ";
-    while (!pairQueue2.empty()) {
-        std::cout << pairQueue2.top();
-        pairQueue2.pop();
-    }
+    pQueue.removePairsInRange(pQueue.queue, 11, 17);
+    std::cout << "Queue after removing pairs in range [11, 17]: ";
+    pQueue.printElements();
     std::cout << std::endl;
 
     // Задание 4
