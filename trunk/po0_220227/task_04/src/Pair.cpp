@@ -5,5 +5,4 @@ Pair::Pair(const int fNum, const double sNum)
 {
 }
 
-// bool Pair::operator==(const Pair& a) const = default;
 
