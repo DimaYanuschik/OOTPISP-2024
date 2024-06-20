@@ -56,12 +56,16 @@ public:
         return static_cast<int>(Size());
     }
 
-    friend void operator+(const List<T>& list, const int num)
+    friend List<T> operator+(const List<T>& list, const int num)
     {
+        List<T> res;
+
         for (size_t i = 0; i < list.Size(); i++)
         {
             list.elements[i] += num;
         }
+
+        return res;        
     }
 
     friend std::ostream& operator<<(std::ostream& out, const List<T>& a)

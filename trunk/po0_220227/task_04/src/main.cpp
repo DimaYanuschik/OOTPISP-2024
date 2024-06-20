@@ -14,7 +14,7 @@ int main()
     list2.Add(16);
     list2.Add(22);
 
-    list + 1;
+    list = list + 1;
 
     std::cout << list << std::endl;
 
