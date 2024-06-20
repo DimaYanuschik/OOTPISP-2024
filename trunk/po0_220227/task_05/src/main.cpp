@@ -96,17 +96,17 @@ int main() {
 
     // Задание 3-5
 
-    QList<std::pair<int, int>> list([](const std::pair<int, int>& a, const std::pair<int, int>& b) {
-        return a.first > b.first;
+    QList<int> list([](int a, int b) {
+        return a > b;
         });
 
-    std::vector<std::pair<int, int>> elements = { {10, 1}, {5, 2}, {8, 3}, {3, 4}, {7, 5} };
+    std::vector<int> elements = { 10, 5, 8, 3, 7 };
     list.fillElements(elements);
 
     std::cout << "Initial list: ";
     list.printElements();
 
-    list.addElement({ 6, 6 });
+    list.addElement(6);
 
     std::cout << "List after adding element: ";
     list.printElements();
@@ -116,12 +116,12 @@ int main() {
     std::cout << "List after removing element: ";
     list.printElements();
 
-    list.removePairsInRange(4, 8);
+    list.removeInRange(4, 8);
 
-    std::cout << "List after removing pairs in range: ";
+    std::cout << "List after removing elements in range: ";
     list.printElements();
 
-    std::cout << "Average of first numbers: " << list.getAverage().first << std::endl;
+    std::cout << "Average: " << list.getAverage() << std::endl;
 
     list.subtractAverage();
 

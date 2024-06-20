@@ -27,12 +27,12 @@ public:
         }
     }
 
-    void removePairsInRange(int minFirstNumber, int maxFirstNumber) {
-        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(comparator);
+    void removeInRange(int minElement, int maxElement) {
+        std::priority_queue<int, std::vector<int>, std::function<bool(const int&, const int&)>> temp(comparator);
         while (!pq.empty()) {
-            T element = pq.top();
+            int element = pq.top();
             pq.pop();
-            if (element.GetFirstNumber() < minFirstNumber || element.GetFirstNumber() > maxFirstNumber) {
+            if (element < minElement || element > maxElement) {
                 temp.push(element);
             }
         }
