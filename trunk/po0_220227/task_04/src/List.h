@@ -62,7 +62,7 @@ public:
 
         for (size_t i = 0; i < list.Size(); i++)
         {
-            list.elements[i] += num;
+            res.Add(list.elements[i] + num);
         }
 
         return res;        
