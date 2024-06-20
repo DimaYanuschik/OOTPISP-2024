@@ -153,7 +153,7 @@ int main() {
     std::cout << "Queue after removing element: ";
     intQueue.printElements();
 
-    intQueue.removeElementsInRange(20, 40);
+    intQueue.removePairsInRange(20, 40);
     std::cout << "Queue after removing elements in range: ";
     intQueue.printElements();
 
