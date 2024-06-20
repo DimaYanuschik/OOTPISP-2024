@@ -25,10 +25,10 @@ public:
     }
 
     void removePairsInRange(int minFirstNumber, int maxFirstNumber) {
-        std::priority_queue<T> tempQueue;
+        std::priority_queue<Pair> tempQueue;
 
         while (!queue.empty()) {
-            T top = queue.top();
+            Pair top = queue.top();
             queue.pop();
 
             if (top.GetFirstNumber() < minFirstNumber || top.GetFirstNumber() > maxFirstNumber) {
