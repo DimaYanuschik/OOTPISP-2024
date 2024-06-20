@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
-#include <ranges>
 
 #include "Pair.h"
 #include "List.h"
@@ -28,7 +27,7 @@ void add_elements(std::vector<T>& container, const std::vector<T>& elements) {
 template <class T>
 void remove_elements(std::vector<T>& container, const std::vector<T>& elements) {
     for (T element : elements) {
-        auto it = std::ranges::find(container, element);
+        auto it = std::find(container.begin(), container.end(), element);
         if (it != container.end()) {
             container.erase(it);
         }
@@ -46,7 +45,8 @@ T findMinFirstElement(const std::list<T>& container) {
         return T{};
     }
 
-    auto minIt = std::ranges::min_element(container, [](const T& a, const T& b) { return a.GetFirstNumber() < b.GetFirstNumber(); });
+    auto minIt = std::min_element(container.begin(), container.end(),
+        [](const T& a, const T& b) { return a.GetFirstNumber() < b.GetFirstNumber(); });
     return *minIt;
 }
 
@@ -80,8 +80,6 @@ int main() {
     remove_elements(my_pair_list, elements_to_remove_2);
 
     Pair pairSum = sum_elements(my_pair_list);
-
-    std::cout << "First numbers sum: " << pairSum.GetFirstNumber() << " " << "Second numbers sum: " << pairSum.GetSecondNumber() << std::endl;
 
     std::list<Pair> pairList;
     pairList.emplace_back(1, 10.0);
