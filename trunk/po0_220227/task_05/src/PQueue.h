@@ -24,19 +24,34 @@ public:
         }
     }
 
-    void removeElementsInRange(int minFirstNumber, int maxFirstNumber) {
-        std::set<Pair> elementsToRemove;
-        while (!queue.empty()) {
-            const Pair& top = queue.top();
-            if (top.GetFirstNumber() >= minFirstNumber && top.GetFirstNumber() <= maxFirstNumber) {
-                elementsToRemove.insert(top);
+    //void removeElementsInRange(int minFirstNumber, int maxFirstNumber) {
+    //    std::set<Pair> elementsToRemove;
+    //    while (!queue.empty()) {
+    //        Pair& top = queue.top();
+    //        if (top.GetFirstNumber() >= minFirstNumber && top.GetFirstNumber() <= maxFirstNumber) {
+    //            elementsToRemove.insert(top);
+    //        }
+    //        queue.pop();
+    //    }
+
+    //    for (const auto& element : elementsToRemove) {
+    //        queue.push(element);
+    //    }
+    //}
+
+    void removePairsInRange(std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>>& pairQueue, int minFirstNumber, int maxFirstNumber) {
+        std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>> tempQueue;
+
+        while (!pairQueue.empty()) {
+            Pair top = pairQueue.top();
+            pairQueue.pop();
+
+            if (top.GetFirstNumber() < minFirstNumber || top.GetFirstNumber() > maxFirstNumber) {
+                tempQueue.push(top);
             }
-            queue.pop();
         }
 
-        for (const auto& element : elementsToRemove) {
-            queue.push(element);
-        }
+        pairQueue.swap(tempQueue);
     }
 
     void printElements() const {
