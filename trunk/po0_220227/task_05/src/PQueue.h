@@ -1,23 +1,22 @@
 #include <queue>
 #include <functional>
 
-template <typename T>
 class QList {
 private:
-    std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> pq;
-    std::function<bool(const T&, const T&)> comparator;
+    std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> pq;
+    std::function<bool(int, int)> comparator = std::less<int>();
 
 public:
-    List(std::function<bool(const T&, const T&)> comp = std::less<T>())
+    QList(std::function<bool(int, int)> comp = std::less<int>())
         : comparator(comp), pq(comp) {}
 
-    void fillElements(const std::vector<T>& elements) {
-        for (const auto& element : elements) {
+    void fillElements(const std::vector<int>& elements) {
+        for (int element : elements) {
             pq.push(element);
         }
     }
 
-    void addElement(const T& element) {
+    void addElement(int element) {
         pq.push(element);
     }
 
@@ -28,7 +27,7 @@ public:
     }
 
     void removeInRange(int minElement, int maxElement) {
-        std::priority_queue<int, std::vector<int>, std::function<bool(const int&, const int&)>> temp(comparator);
+        std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> temp(comparator);
         while (!pq.empty()) {
             int element = pq.top();
             pq.pop();
@@ -40,7 +39,7 @@ public:
     }
 
     void printElements() const {
-        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(pq);
+        std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> temp(pq);
         while (!temp.empty()) {
             std::cout << temp.top() << " ";
             temp.pop();
@@ -48,23 +47,23 @@ public:
         std::cout << std::endl;
     }
 
-    T getAverage() const {
-        T sum = 0;
+    int getAverage() const {
+        int sum = 0;
         size_t count = 0;
-        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(pq);
+        std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> temp(pq);
         while (!temp.empty()) {
             sum += temp.top();
             count++;
             temp.pop();
         }
-        return sum / static_cast<T>(count);
+        return sum / static_cast<int>(count);
     }
 
     void subtractAverage() {
-        T average = getAverage();
-        std::priority_queue<T, std::vector<T>, std::function<bool(const T&, const T&)>> temp(comparator);
+        int average = getAverage();
+        std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> temp(comparator);
         while (!pq.empty()) {
-            T element = pq.top();
+            int element = pq.top();
             pq.pop();
             element -= average;
             temp.push(element);

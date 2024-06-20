@@ -96,36 +96,32 @@ int main() {
 
     // Задание 3-5
 
-    QList<int> list([](int a, int b) {
-        return a > b;
-        });
+    QList list;
 
     std::vector<int> elements = { 10, 5, 8, 3, 7 };
     list.fillElements(elements);
 
-    std::cout << "Initial list: ";
+    std::cout << "Current elements: ";
     list.printElements();
 
-    list.addElement(6);
-
-    std::cout << "List after adding element: ";
-    list.printElements();
+    list.addElement(12);
 
     list.removeElement();
 
-    std::cout << "List after removing element: ";
+    std::cout << "Current elements: ";
     list.printElements();
 
-    list.removeInRange(4, 8);
+    list.removeInRange(4, 9);
 
-    std::cout << "List after removing elements in range: ";
+    std::cout << "Current elements: ";
     list.printElements();
 
-    std::cout << "Average: " << list.getAverage() << std::endl;
+    int average = list.getAverage();
+    std::cout << "Average: " << average << std::endl;
 
     list.subtractAverage();
 
-    std::cout << "List after subtracting average: ";
+    std::cout << "Current elements: ";
     list.printElements();
 
     return 0;
